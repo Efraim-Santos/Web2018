@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+	<style type="text/css">
+		
+		body{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.header{
+			padding-top: 10px;
+			width: 100%;
+			height: 50px;
+			background-color: #e6e6e6;
+		}
+		.button{
+			float: left;
+			font-size: 25px;
+			border: 1px solid black;
+			border-right: none;
+			margin-top: -3px;
+			padding: 5px;
+		}
+		#html{
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+		#output{
+			border-right: 1px solid black;
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+		#codePlayer{
+			float: left;
+			margin-right: 20%;
+			font-size: 30px;
+			font-weight: bold;
+			padding-left: 10px;
+		}				
+		.active{
+			background-color: #99ccff;
+		}
+		.addCorItem{
+			background-color:grey;
+		}
+		#textohtml, #textocss, #textojavaScript{
+			
+            resize: none;
+		}
+        .painel{
+            float: left;
+            height: 568px !important; 
+			width: 30%;
+            border-left: none;
+           
+        }
+        iframe{
+            border: none;
+        }
+       
+        .hidden{
+            display: none;
+        }
+        
+
+
+	</style>
+</head>
+
+<body>
+	<div class="header">
+        
+        <img src="teia3.png"  style="width: 55px; margin-left: -590px; margin-top: -8px;" >
+
+
+		<div id="codePlayer">Spider Compiler</div>        
+		<div id="html" class="button active">HTML</div>
+		<div id="css" class="button">CSS</div>
+		<div id="javaScript" class="button">JavaScript</div>
+		<div id="output" class="button active">Output</div>
+        
+        
+	</div>
+	<div class="principal">
+        
+		<textarea id="textohtml" class="painel"> <p id="paragraph">Hello word!!</p> </textarea>
+        <textarea id="textocss" class="painel hidden"> p{color: green;} </textarea>
+        <textarea id="textojavaScript" class="painel hidden"> document.getElementById("paragraph").innerHTML = "Hello Guys!"; </textarea>
+        <iframe id="textooutput" class="painel" > </iframe>
+        
+        
+	</div>
+
+	<script type="text/javascript">
+        
+        function chama(){
+             $("iframe").contents().find("html").html("<html> <head> <style type='text/css'>" + $("#textocss").val() + "</style> </head> <body>"  + $("#textohtml").val() + "</body> </html>");
+            
+            
+            
+          document.getElementById("textooutput").contentWindow.eval($("#textojavaScript").val());
+
+            
+
+        }
+		
+		$(".button").hover(function(){
+
+			$(this).addClass("addCorItem");
+
+		}, function(){
+			$(this).removeClass("addCorItem");
+		});
+
+		$(".button").click(function(){
+
+			$(this).toggleClass("active");
+			$(this).removeClass("addCorItem");
+            
+            var aux = "texto" + ($(this).attr("id"));
+            
+            $("#"+ aux).toggleClass("hidden").length;
+            
+            
+            var nunberOfActive = 4 - $(".hidden").length;
+            
+            $(".painel").width(($(window).width() / nunberOfActive) -10);
+            
+		});
+        
+        $("#painel").height($(window).height() - $(".header").height() -15);
+        $("iframe").width(($(window).width() / 2) -10);
+        $("iframe").contents().find("html").html($("#textohtml").val());
+        
+        chama();
+                
+        $("textarea").on('change keyup paste', function(){
+            chama();
+        });
+        
+	</script>
+</body>
+</html>

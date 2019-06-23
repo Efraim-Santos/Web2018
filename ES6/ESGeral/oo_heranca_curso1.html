@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        class Animal{
+
+            constructor(cor, tamanho){
+                this._cor = cor;
+                this._tamanho = tamanho;
+            }
+            
+            dormir(){
+                console.log('Dormir')
+            }
+
+            get cor(){
+                return `Cor: ${this._cor}`;
+            }
+
+            set cor(cor){
+                this._cor = cor;
+            }
+            get tamanho(){
+                return `${this._tamanho} Cm`;
+            }
+
+            set tamanho(tam){
+                this._tamanho = tam;
+            }
+        }
+
+        class Cachorro extends Animal {
+            constructor (){
+                super()
+                this.orelhas = '';
+            }
+            
+            correr(){
+                console.log('Correr');
+            }
+            rosnar(){
+                console.log('Rosnar');
+            }
+        }
+
+        class Passaro extends Animal{
+            constructor (){
+                super()
+                this.bico = '';
+            }
+
+            voar(){
+                console.log('Voar');
+            }
+        }
+        
+        let pug = new Cachorro();
+        
+        pug.cor = 'preto';
+        pug.tamanho = 30;
+
+        console.log(pug.cor);
+        console.log(pug.tamanho);
+        pug.correr();
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

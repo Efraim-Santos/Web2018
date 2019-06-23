@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <script type="text/javascript">
+
+        Object.prototype.attr0 = '0'
+        
+        const avo = {           //Objeto
+            attr1 : 'A'
+        }
+        const pai = { 
+            __proto__ : avo,        // Adicionando ao proto do objeto o objeto avo, logo ele vai herdar as caracteristicas
+            attr2: 'B',
+            attr3: 'C'
+        }
+        const filho = {             
+            __proto__: pai,
+            attr3: 'D'
+        }
+        
+        console.log(filho.attr3, pai.attr3)
+
+        const carro = {
+            velAtual: 0,
+            velMax: 200,
+            aceleraMais(delta){
+                if(this.velAtual <= this.velMax){
+                    this.velAtual += delta
+                } else {
+                    this.velAtual = this.velMax
+                }
+            },
+            status() {
+                return `${this.velAtual}Km/h de ${this.velMax}`
+            }
+        }   
+
+        const volvo = {
+            modelo: 'V40',
+            status(){
+                return `${this.modelo}: ${super.status()}`
+            }
+        }
+
+        const ferrari = {
+            modelo: 'F40',
+            status() {
+                return `${this.modelo}: ${super.status()}`
+            }
+        }
+
+        console.log(ferrari)
+        console.log(volvo)
+
+        Object.setPrototypeOf(ferrari, carro)           //outra maneira que fazer o objeto herdar do pai, é dessa maneira utilizando a propria extensao object e atribuindo ferrari a carro
+        Object.setPrototypeOf(volvo, carro)
+
+        volvo.aceleraMais(20)
+        console.log(`\n ${volvo.status()}`)
+        volvo.aceleraMais(20)
+        console.log(`\n ${volvo.status()}`)
+
+        volvo.velMax = 280
+        console.log(`\n ${volvo.status()}`)
+
+        console.log(`\n ${ferrari.status()}`)
+
+        // ######################################################### PARTE 2
+
+        const paiExemplo2 = {
+            nome: 'Pedro',
+            corCabelo: 'preto',
+            idade: 60
+        }
+
+        const filha = Object.create(paiExemplo2);       //criando um obejto com base no pai, vai hedar os atributos pelo prototype
+        filha.nome = 'Ana'
+        filha.idade = 15
+
+        console.log(`\n Nome do filho: ${filha.nome}, idade: ${filha.idade}`)
+
+        const filho = Object.create(paiExemplo2, {
+            nome: { value: 'Marcos', writable: false, enumerable: true}             //Aqui é outro exemplo como criar um objeto filho, o writable não permite a reescrita de valores da variavel, e enumerable permite a impressão da variavel, a legibilidade
+        })
+        console.log(`Filho mais velho ${filho.nome}, idade ${filho.idade}`)
+    
+    </script>
+</body>
+</html>

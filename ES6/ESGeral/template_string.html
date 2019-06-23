@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        let nome = 'efraim'
+        
+        function testeTemplate(x , y) {
+            return ( (x + y) / 2)
+        }
+        // TESTANDO O TEMPLATE STRING QUE SERVE PARA INTERPOLAÇÃO DENTRO DO ESCOPO DE IMPRESSAO 
+
+        console.log(`Olá ${nome}`)
+
+        console.log(`SOMA DE 7 + 7 = ${7+7}`)
+        
+        console.log(`MEDIA DE  50 + 13 = ${testeTemplate(50, 13)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

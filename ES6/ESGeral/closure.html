@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+        
+        let carro = ( () => {
+            // Variavel privada
+            let velocidade = 1
+            // Função privada
+            let acelerar = () => {
+                velocidade += 10
+            }
+
+            let aumentar_velocidade = () => {
+                acelerar()
+            }
+            return {
+                correr: aumentar_velocidade,
+                velocidade_aux: velocidade
+            }
+        })()
+
+        let teste = carro
+
+        console.log(teste.correr())
+        teste.correr()
+        teste.correr()
+        teste.correr()
+
+        console.log(teste.velocidade_aux)
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

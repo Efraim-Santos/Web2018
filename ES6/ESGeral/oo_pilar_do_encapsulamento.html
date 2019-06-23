@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+       
+       class Tv {
+           constructor (){
+               this._relacaoCanais = Array(2, 4, 5, 7, 10)
+               this._canalAtivo = 5
+               this._volume = 5
+           }
+
+           //getters e setters
+           get canalAtivo(){
+               return this._canalAtivo;
+           }
+
+           set canalAtivo(canal){
+               let x = this._relacaoCanais.indexOf(canal);
+               if (x !== -1) {
+                   this._canalAtivo = canal;
+                }    
+            }    
+       }
+
+
+       let nova_tv = new Tv();
+
+       console.log(nova_tv.canalAtivo = 3)
+       nova_tv.canalAtivo = 7
+       
+
+       console.log(nova_tv.canalAtivo) 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

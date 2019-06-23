@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+
+        console.log('------------ DESAFIO DE IMPLEMENTAR O MAP----------------')
+
+
+        
+        Array.prototype.map2 = function(callBack){
+            let new_array = []
+            for (let i = 0; i < this.length; i++) {
+              new_array[i] = callBack(this[i])
+            }
+            return new_array
+        }
+
+
+        const  nums = [1, 2, 3, 4, 5, 6]
+
+        console.log(nums)
+
+        let resultado = nums.map2(function(e){       //Map execulta uma ação em um array e retorna outro array do mesmo tamanho
+            return e * 2
+        })
+
+        console.log(resultado)
+
+        console.log('------------ FILTER--------')
+
+        const produtos = [
+            {nome: 'Notebook', preco: 2499, fragil: true}, 
+            {nome: 'ipad', preco: 2499, fragil: true},
+            {nome: 'Copo de vidro', preco: 21.49, fragil: true},
+            {nome: 'Copo de lastico ', preco: 18.99, fragil: false}
+        ]
+
+        const filter1 = x => (x.preco < 500)            
+        const filter2 = x => x.fragil == true
+        const resultado_filter = produtos.filter(filter1).filter(filter2)           //Filter como o nome diz ele faz um filtro no array, e retorna somente o que tiver de acordo com a condição
+
+        console.log(resultado_filter)
+
+        console.log('------------------------- \n\n')
+
+        const notas = [
+            {nome: 'efraim', nota: 7.5},
+            {nome: 'jose', nota: 8.9},
+            {nome: 'maria', nota: 10},
+            {nome: 'Jessica', nota: 6}
+        ]
+        console.log(notas)
+
+        // PRIMEIRA FORMA CALCULAR A MEDIA
+        let total = 0
+        const func = valor => total += valor.nota
+        notas.map(func)
+        console.log(`Media 1: ${total/notas.length} \n\n`)
+
+        // SEGUNDA FORMA
+
+        const func2 = valor => valor.nota
+        const func3 = (total, atual) => total + atual
+        const result = notas.map(func2).reduce(func3)
+        console.log(`Media 2: ${result}`)
+
+        // 
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var x = Object.entries(fruits);
+
+        console.log(typeof(x) +'\n\n');
+        console.log(x);
+
+        let nome = "efraim", sobrenome = "santos", idade = 25
+
+        console.log(`${nome}, ${sobrenome}, ${idade}`)
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+       
+       let carro = {
+           marca: 'Volks',
+           modelo: 'Polo',
+           valor: 45000,
+
+           imprimir: function() {
+                console.log(`A empresa ${this.marca} lançou o ${this.modelo} com valor de ${this.valor}.`);
+           }
+       }
+
+       let carro2 = {
+           marca: 'Fiat',
+           modelo: 'Argo',
+           valor: 45000,
+
+           imprimir: function() {
+                console.log(`A empresa ${this.marca} lançou o ${this.modelo} com valor de ${this.valor}.`);
+           }
+       }
+    
+       function aux(x, y, z){
+           // Lógica
+           //Requisição http
+           //Resposta http
+           return{
+                marca: x,
+                modelo: y,
+                valor: z,
+                
+                imprimir() {
+                    console.log(`A empresa ${this.marca} lançou o ${this.modelo} com valor de ${this.valor}.`);
+                }
+            } 
+        }
+        
+        let new_carro = aux('Ford', 'New Fiesta', 55000);
+        let new_carro2 = aux('Ford', 'Fusion', 85000);
+        let new_carro3 = aux('Renault', 'Sandero', 45000);
+        let new_carro4 = aux('Renault', 'Duster', 55000);
+        console.log(new_carro);
+        new_carro.imprimir();
+        new_carro2.imprimir();
+        new_carro3.imprimir();
+        new_carro4.imprimir();
+
+        console.log('----------------------------------------')
+
+        let Carro = function(x, y, z){
+            // Lógica
+           //Requisição http
+           //Resposta http
+           return{
+                marca: x,
+                modelo: y,
+                valor: z,
+                
+                imprimir() {
+                    console.log(`A empresa ${this.marca} lançou o ${this.modelo} com valor de ${this.valor}.`);
+                }
+            } 
+        }
+
+        let carro_new = new Carro('Ford', 'New Fiesta', 55000);
+        let carro2_new = new Carro('Ford', 'Fusion', 85000);
+        let carro3_new = new Carro('Renault', 'Sandero', 45000);
+        let carro4_new = new Carro('Renault', 'Duster', 55000);
+        console.log(carro2_new);
+        carro_new.imprimir();
+        carro2_new.imprimir();
+        carro3_new.imprimir();
+        carro4_new.imprimir();
+
+
+
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>

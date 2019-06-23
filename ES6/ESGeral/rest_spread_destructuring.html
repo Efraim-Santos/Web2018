@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+       
+        let carro = ['gol', 'fiesta', 'corsa', 'sandero', 'hb20'];
+        let pais = ['brasil', 'alemanha', 'frança', 'egito', 'argentina']
+        let juncao1 = [...carro, ...pais];
+        let juncao2 = [[...carro], [...pais]];
+
+        console.log(juncao1);
+        console.log(juncao2);
+
+        let new_Carro = carro[0];
+
+        console.log(typeof(new_Carro));
+
+        console.log(...new_Carro);
+
+        let new_CarroArray = [...new_Carro];
+
+        //carro = [...pais]
+
+        console.log(carro);
+        
+        console.log(`Tamanho do vetor: ${carro.length}`);
+        
+        console.log(new_CarroArray);
+        
+        new_CarroArray.forEach((valor, index) => {
+            if(valor == 'o'){
+                console.log(`Posição ${index} Letra Correta `);
+                console.log(valor);
+            }
+        });
+
+        console.log('--------------------------------------')
+
+        //DESTRUCTURING COM ARRAY
+
+        let frutas = ['maça', 'uva', 'mamao', 'pera', 'manga'];
+        
+        let [a, b] = frutas;  // A TRIBUINDO AS NOVAS VARIAVEIS A , B OS RESPECTIVOS VALORES [ 0, 1 ...] DO ARRAY CARRO
+        let [, , x, y] = frutas;
+
+        console.log(a, b);
+        console.log(x, y);
+        console.log(`tipo: ${typeof(a)}`)
+
+        //DESTRUCTURING COM OBJECT
+
+        let aux_object = {
+            marca: 'Samsung',
+            modelo: 'sdm11',
+            preco: 2.011,
+
+            imprimir(){
+                console.log(`Notebook ${this.marca} modelo ${this.modelo} preco ${this.preco}`);
+            }
+        }
+        
+        let {marca, modelo, preco} = aux_object;                        //pode passar de forma direta
+
+        console.log(marca, modelo, preco);
+
+        console.log(`tipo: ${typeof(preco)}`)
+
+        let {marca: m, modelo: d, preco: p} = aux_object;               //Ou atribuindo a outras variaveis
+
+        console.log(typeof(m), d, p);
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>

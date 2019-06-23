@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script type="text/javascript">
+        
+        // Object.prenventExtensions 
+        // Não permite criar novos atributos 
+
+        const produto = Object.preventExtensions({
+            nome: 'Qualquer', 
+            preco: 1.99,
+            tag: 'Promoção'
+        })
+        
+        console.log('Extensível: ', Object.isExtensible(produto))   //Para saber se o objeto é extension
+
+        produto.nome = 'Borracha'   // nessa linha ele permite modificar o valor do atributo 
+        produto.descricao = 'Borracha escolar branca'   //nessa linha ele não permite criar novos atributos
+        delete produto.tag  // normalmente ele ira deletar esse atributo
+
+        console.log(produto)
+    
+        // Object.seal
+        // Ele sela o objeto, não permitindo a exclusão, nem add novos atributos, so permite modificar os valores
+        const pessoa = { nome: 'Juliana', idade: 35 }
+        Object.seal(pessoa)
+        console.log('Selado: ', Object.isSealed(pessoa))
+
+        pessoa.sobrenome = 'Silva'
+        delete pessoa.nome
+        pessoa.idade = 29
+        console.log(pessoa)
+
+        //Object Freeze ele não permite fazer nenhuma modificação ou add ou exclusão
+
+
+
+    </script>
+</body>
+</html>

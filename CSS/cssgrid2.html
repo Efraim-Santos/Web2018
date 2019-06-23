@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: 
+            [inicio] 1fr            /*atribuindo nomes as linhas da colunas*/
+            [metade-1] 1fr
+            [metade-2] 1fr [fim];
+            grid-template-rows: repeat(3, 1fr);
+            grid-row-gap: 20px; /*aplica um espaçamento entre as linhas de 20px*/
+            grid-column-gap: 10px;
+        }
+
+        .d1{
+            grid-column-start: metade-1; /* passando o nome da linha da coluna a qual vai começar */
+            grid-column-end: fim;  /* passando o nome da linha da coluna qual vai terminar */
+        }
+        .d2{
+            grid-row-start: 2;
+            grid-row-end: span 2;
+        }
+        .d3 {
+            grid-column: metade-2 / fim; /* em uma linha vc consegue atribuir ( inicio / fim ) */
+            grid-row: 2 / span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+</body>
+
+</html>
