@@ -1,0 +1,92 @@
+html, body {
+    cursor: url('imgs/target.png'), auto;
+    /* overflow: auto; */
+}
+#controle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 99%;
+    height: 105px;
+}
+@media (max-width: 728px){
+    #controle{
+        width: 100%;
+        height: 170px;
+    }
+    #controle span:first-child {
+        font-size: 16px !important;
+    }
+    #cronometro {
+        font-size: 30px !important;
+    }
+    #tempo {
+        top: 20% !important;    
+        width: 20% !important;
+    }
+    #fantasmas {
+        width: 75% !important;
+        left: 28% !important;
+    }
+    #fantasmas > span{ 
+        top: 0 !important;
+        width: 30px !important;
+    }
+    /* #fantasmas > span{  
+    position: relative;   
+    float: left;
+    top: 23%;
+    margin-left: 10px;
+    width: 4.5% !important;
+    height: 50px !important;
+    background: url(imgs/ghost-v.png) no-repeat center center;
+    background-size: contain;
+}
+    } */
+}
+#tempo {
+    position: relative;
+    top: 0;
+    left: 5%;
+    width: 10%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}   
+#controle #tempo span:first-child {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    line-height: 38px;
+}
+#cronometro {
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    color: white;    
+    font-size: 50px !important;
+    text-align: center;
+    z-index: -1;
+}
+#fantasmas {
+    position: absolute;
+    width: 78%;
+    height: 95%;
+    top: 0;
+    left: 20%;
+    text-align: center;
+}
+#fantasmas > span{  
+    position: relative;   
+    float: left;
+    top: 23%;
+    margin-left: 10px;
+    width: 4.5%;
+    height: 50px !important;
+    background: url(imgs/ghost-v.png) no-repeat center center;
+    background-size: contain;
+}

@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url(imgs/imagem-6.jpg) no-repeat center center;
+    background-size: cover;
+}
+.controle-titulo, .controle-game, #game-over a, #vitoria a {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.controle-titulo h1 {
+    display: inline-block;
+    padding: 35px 20px 20px 20px;
+    background: url('imgs/border.png') no-repeat bottom left, url('imgs/border2.png') no-repeat top right;
+    background-size: contain;
+    color: white;
+    font-family: 'Special Elite', cursive;
+    font-size: 100px;
+    text-transform: capitalize;
+    text-shadow: 4px 4px 4px #2C2C2C;
+}
+.controle-game{
+    top: 74%;
+    width: 180px;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+form label {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+form select{
+    width: 100%;
+    margin: 20px 0;
+}
+form button{
+    padding: 7px 10px;
+    background-color: #23272B;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+}
+form button:hover {
+    opacity: 0.8;
+}
+@media (max-width: 728px){
+    .controle-titulo h1 {
+        font-size: 50px;
+    }
+    .controle-game{
+        width: 120px;
+        padding: 15px 20px;
+    }
+}
+/* ################################### GAME OVER ########################## */
+
+#game-over{
+    background: url(imgs/imagem-4.jpg) no-repeat bottom center;
+}
+#game-over h1{
+    background: url(imgs/coffin.png) no-repeat top center;
+    padding: 0;
+    padding-top: 128px; 
+    margin: 0;
+}
+#game-over .controle-titulo {
+    top: (50% - 128px);
+}
+#game-over a, #vitoria a {
+    text-decoration: none;
+    width: 100px;
+    top: 80%;
+    padding: 15px 25px;
+    background: url(imgs/blood.png) no-repeat 122px center;
+    background-size: 26px;
+    background-color: #23272B;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+#game-over a:hover{
+    background-color: #C61D1D;
+    background-image: none;
+}
+
+/* ################################### GAME OVER ########################## */
+
+#vitoria h1{
+    background: url(imgs/emblem.png) no-repeat top center;
+    background-size: 100px;
+    padding-top: 100px; 
+}
+#vitoria a {
+    top: 75%;   
+    background-color: #C61D1D;
+    background-image: none;
+}
+#vitoria a:hover{
+    opacity: 0.8;
+}

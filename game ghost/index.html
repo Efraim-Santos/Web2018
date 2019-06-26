@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CAÇA FANTASMAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+
+
+</head>
+<body>
+    <div class="controle-titulo">
+        <h1>caça<br>fantasma</h1>
+    </div>
+    <div class="controle-game">
+        <form action="game-principal.html" method="GET">
+            <label for="select">Selecione o Nível</label>
+            <select name="opcao" id="opcao-id" required>
+                <option value="">-- Níveis --</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+            </select>
+            <button >INICIAR</button>
+        </form>
+    </div>
+
+    <script>
+        var altura = window.innerHeight;
+        var largura = window.innerWidth;
+        document.body.style.height = altura +'px';
+    </script>
+</body>
+</html>
